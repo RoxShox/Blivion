@@ -136,7 +136,6 @@ p {
     width: 783px;
     height: 854px;
     position: absolute;
-    right: -5%;
     z-index: -1;
     bottom: -134px;
 }
@@ -192,7 +191,7 @@ p {
     flex-direction: column;
     align-items: center;
     row-gap: 53px;
-    right: 230px;
+    left: 164px;
     top: 40px;
 }
 
@@ -209,7 +208,7 @@ p {
 }
 
 .first__sqreen-title-btn{
-    font-family: 'Roboto', sans-serif;
+    font-family: PressStart, sans-serif;
     font-weight: 400;
     font-size: 26px;
     text-align: center;
@@ -229,7 +228,7 @@ p {
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
-    right: 232px;
+    left: 165px;
     position: relative;
     top: 40px;
 }
@@ -265,7 +264,7 @@ p {
 }
 
 .second__sqreen-title-btn{
-    font-family: 'Roboto', sans-serif;
+    font-family: PressStart, sans-serif;
     font-weight: 400;
     font-size: 26px;
     text-align: center;
@@ -281,7 +280,7 @@ p {
 
 #result-screen {
     position: relative;
-    right: 210px;
+    left: 146px;
     top: 36px;
 }
 
@@ -438,6 +437,27 @@ p {
     font-size: 14px; /* Размер шрифта */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Легкая тень */
     border-radius: 15px; /* Закругленные углы для облачка */
+}
+
+.pulsing-image {
+    animation: pulse 1.5s infinite; 
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(1.1); 
+    }
+    100% {
+        transform: scale(1); 
+    }
+}
+
+.main__content {
+    position: absolute;
+    bottom: 77px;
 }
 
 .hoverable-area:hover .tooltip {
