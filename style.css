@@ -414,3 +414,121 @@ p {
     position: absolute;
     bottom: 0;
 }
+
+.hoverable-area {
+    position: relative; /* Позволяет позиционировать дочерние элементы */
+    display: inline-block; /* Чтобы элемент занимал только необходимое пространство */
+    cursor: none; /* Устанавливаем стандартный курсор */
+}
+
+.tooltip {
+    visibility: hidden; /* Скрываем облачко по умолчанию */
+    border: 3px solid #00cd9d; /* Цвет рамки */
+    border-radius: 20px; /* Закругленные углы */
+    width: 300px; /* Ширина облачка */
+    padding: 10px 15px; /* Отступы внутри облачка */
+    position: absolute; /* Позволяет позиционировать облачко относительно родителя */
+    bottom: 125%; /* Позиция облачка над элементом */
+    left: 50%; /* Центрируем облачко */
+    transform: translateX(-50%); /* Центрируем облачко */
+    z-index: 1; /* Устанавливаем уровень отображения */
+    background-color: #f9f9f9; /* Светлый фон для облачка */
+    color: #333; /* Темный цвет текста для контраста */
+    text-align: center; /* Выравнивание текста по центру */
+    font-size: 14px; /* Размер шрифта */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Легкая тень */
+    border-radius: 15px; /* Закругленные углы для облачка */
+}
+
+.hoverable-area:hover .tooltip {
+    visibility: visible; /* Показываем облачко при наведении */
+}
+
+@media (max-width: 1400px) {
+   .main__content__links {
+    position: relative;
+    bottom: 50px;
+    }
+    .main__content__robot-img {
+    width: 643px;
+    height: 744px;
+    position: absolute;
+    right: -5%;
+    z-index: -1;
+    bottom: -84px;
+    }
+    .first__sqreen-title-btn {
+    font-size: 22px;
+    width: 243px;
+    height: 65px;
+    }
+    .first__sqreen-title {
+    font-size: 15px;
+    max-width: 272px;
+    }
+    .first__sqreen {
+    row-gap: 33px;
+    right: 178px;
+    top: 21px;
+    }
+    .second__sqreen {
+    right: 178px;
+    }
+
+    .second__sqreen__label {
+    font-size: 17px;
+    }
+
+    .second__sqreen__input {
+    max-width: 262px;
+    font-size: 17px;
+    }
+    .second__sqreen-title-btn {
+    font-size: 22px;
+    width: 230px;
+    height: 50px;
+    }
+    .result-screen__title {
+    font-size: 17px;
+    }
+
+    .result-screen__label {
+        font-size: 9px;
+    }
+    .result-screen__end-left__text {
+
+    font-size: 12px;
+    }
+    #result-screen {
+    right: 164px;
+    }
+    .result-screen__end-right p{
+        max-width: 100px;
+        line-height: 150%;
+    }
+    .result-screen__avatar-text {
+    max-width: 199px;
+    font-size: 15px;
+    }
+    .result-screen__id-key {
+    font-size: 12px;
+    }
+    .result-screen__avatar-text::before {
+    width: 200px;
+    top: -20px;
+    }
+    .result-screen__avatar {
+        padding-top: 4px;
+        padding-bottom: 6px;
+    }
+    .result-screen__data-stick {
+    height: 30px;
+    }
+    .result-screen__text{
+        line-height: 150%;
+    }
+    .result-screen__link__text {
+    margin-top: -12px;
+    }
+
+}
