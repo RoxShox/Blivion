@@ -5,6 +5,8 @@ const submitUsernameButton = document.getElementById('submit-username');
 const usernameInput = document.getElementById('username');
 const displayUsername = document.getElementById('display-username');
 const quoteElement = document.getElementById('random-text-quote')
+const faithLevel = document.getElementById('faith-level')
+const mainDate = document.getElementById('date')
 
 startButton.addEventListener('click', () => {
     document.getElementById('start-screen').classList.add('hidden');
@@ -18,6 +20,8 @@ submitUsernameButton.addEventListener('click', () => {
         usernameScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
         quoteElement.textContent = `“${getRandomPhrase()}.”`
+        faithLevel.textContent = `${getRandomInteger()}% / ∞`;
+        mainDate.textContent=formatDate()
         
     } else {
         alert('Please enter a username.');
@@ -50,6 +54,18 @@ function getRandomPhrase() {
 
     const randomIndex = Math.floor(Math.random() * phrases.length);
     return phrases[randomIndex]; 
+}
+
+function getRandomInteger() {
+    return Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+}
+
+function formatDate() {
+    const date = new Date()
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Месяцы начинаются с 0
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
 }
 
 
