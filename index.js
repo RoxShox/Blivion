@@ -15,13 +15,28 @@ startButton.addEventListener('click', () => {
 
 submitUsernameButton.addEventListener('click', () => {
     const username = usernameInput.value;
+    const loadingScreen = document.getElementById('loading-screen');
+    const progressBar = document.querySelector('.progress');
+
     if (username) {
-        displayUsername.textContent = `@${username}`;
         usernameScreen.classList.add('hidden');
-        resultScreen.classList.remove('hidden');
-        quoteElement.textContent = `“${getRandomPhrase()}.”`
-        faithLevel.textContent = `${getRandomInteger()}% / ∞`;
-        mainDate.textContent=formatDate()
+         loadingScreen.classList.remove('hidden');
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 5; // Увеличиваем прогресс на 10%
+            progressBar.style.width = progress + '%';
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                displayUsername.textContent = `@${username}`;
+                usernameScreen.classList.add('hidden');
+                loadingScreen.classList.add('hidden')
+                resultScreen.classList.remove('hidden');
+                quoteElement.textContent = `“${getRandomPhrase()}.”`
+                faithLevel.textContent = `${getRandomInteger()}% / ∞`;
+                mainDate.textContent=formatDate()
+            }
+        }, 100); 
         
     } else {
         alert('Please enter a username.');
