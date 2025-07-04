@@ -482,6 +482,10 @@ p {
     transition: width 0.1s;
 }
 
+.main__content__links-right {
+    transform: translateX(480px);
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -558,6 +562,9 @@ p {
 }
 
 @media (max-width: 1400px) {
+    .main__content__links-right {
+        transform: translateX(300px);
+    }
     .loading-screen__title {
     font-size: 17px;
     max-width: 272px;
@@ -670,6 +677,9 @@ p {
     .loading-screen {
         left: -40px;
         top: -808px;
+    }
+    .main__content__links-right {
+        transform: translateX(0px);
     }
     .loading-screen__title {
         font-size: 14px;
@@ -880,7 +890,7 @@ p {
         height: 170px;
     }
     .main__content__links {
-        bottom: -76px;
+        bottom: 43px;
     }
     .first__sqreen {
         left: -39px;
