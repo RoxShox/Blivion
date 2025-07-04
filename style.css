@@ -401,19 +401,7 @@ p {
     text-align: center;
     color: #5bc878;
 }
-.result-screen__link__text::after{
-    content: '';
-    position: absolute;
-    top: -10px; /* Положение верхней части */
-    left: -10px; /* Положение по горизонтали */
-    width: 20px; /* Ширина верхней части */
-    height: 20px; /* Высота верхней части */
-    border-left: 10px solid transparent; /* Левый край */
-    border-right: 10px solid transparent; /* Правый край */
-    border-bottom: 20px solid #000; /* Верхняя часть */
-    transform: rotate(180deg); /* Поворот для создания верхней части */
 
-}
 .runnig-line{
     font-family: Jersey15;
     height: 29px;
