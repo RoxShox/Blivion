@@ -444,7 +444,7 @@ p {
     overflow: hidden;
     box-sizing: border-box;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     text-shadow: 
     0 0 146px #28fbc6, 
@@ -868,7 +868,7 @@ p {
     }
      #result-screen {
         left: 84px;
-        top: -719px;
+        top: -730px;
         max-width: 189px;
     }
     .result-screen__label{
@@ -896,6 +896,9 @@ p {
     }
     .result-screen__link__text {
         font-size: 11px;
+    }
+    .main{
+        height: 830px;
     }
 
 }
