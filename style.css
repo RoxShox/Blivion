@@ -38,6 +38,7 @@ body {
     margin: 0;
     margin: 0 auto;
     overflow: hidden;
+    cursor: url(./assets/img/cursor.png), auto;
 
 }
 
@@ -393,25 +394,42 @@ p {
     justify-content: center;
 }
 .result-screen__link__text{
+    position: relative;
     font-family: PressStart;
     font-weight: 400;
     font-size: 16px;
     text-align: center;
     color: #5bc878;
 }
+.result-screen__link__text::after{
+    content: '';
+    position: absolute;
+    top: -10px; /* Положение верхней части */
+    left: -10px; /* Положение по горизонтали */
+    width: 20px; /* Ширина верхней части */
+    height: 20px; /* Высота верхней части */
+    border-left: 10px solid transparent; /* Левый край */
+    border-right: 10px solid transparent; /* Правый край */
+    border-bottom: 20px solid #000; /* Верхняя часть */
+    transform: rotate(180deg); /* Поворот для создания верхней части */
 
+}
 .runnig-line{
+    font-family: Jersey15;
     height: 29px;
     background: #5bc878;
     font-weight: 400;
-    font-size: 18px;
-    color: #000;
+    font-size: 21px;
+    color: #004e31;
     white-space: nowrap;
     display: flex;
     align-items: center;
     margin-top: 18px;
     position: absolute;
     bottom: 0;
+    text-shadow: 
+    0 0 146px #28fbc6, 
+    0 0 250px #28fbc6;
 }
 
 .mobile__net{
@@ -426,21 +444,27 @@ p {
 
 .tooltip {
     visibility: hidden; 
-    border: 3px solid #00cd9d; 
-    border-radius: 20px; 
-    width: 300px; 
-    padding: 10px 15px; 
+    border: 2px solid #00cd9d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 31px;
+    width: 257px;
+    height: 47px;
     position: absolute;
-    bottom: 125%; 
+    bottom: -50%; 
     left: 50%; 
     transform: translateX(-50%); 
     z-index: 1; 
-    background-color: #f9f9f9; 
-    color: #333; /* Темный цвет текста для контраста */
-    text-align: center; /* Выравнивание текста по центру */
-    font-size: 14px; /* Размер шрифта */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Легкая тень */
-    border-radius: 15px; /* Закругленные углы для облачка */
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.29);
+    background: #004e31;
+    font-family: PressStart;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 175%;
+    text-align: center;
+    color: #c2fff1;
+    transition: all 0.3s ease-in-out;
 }
 
 .pulsing-image {
@@ -591,6 +615,8 @@ p {
     }
     .logo_wrap {
     padding-top: 22px;
+    z-index: 2;
+    position: relative;
     }
     .main__content {
     position: relative;
@@ -694,7 +720,7 @@ p {
     }
     .main__content__links {
     position: relative;
-    bottom: -160px;
+    bottom: -86px;
     display: flex;
     justify-content: center;
     }
@@ -734,7 +760,7 @@ p {
 @media (max-width: 500px) {
     .mobile-robot {
         width: 430px;
-        top: -61px;
+        top: -101px;
     }
     .mobile__net{
         top: 0;
@@ -743,8 +769,8 @@ p {
         font-size: 18px;
     }
     .main__content-info {
-        top: -522px;
-        row-gap: 110px;
+        top: -592px;
+        row-gap: 100px;
     }
     .main:before{
         content: '';
@@ -757,11 +783,11 @@ p {
         height: 170px;
     }
     .main__content__links {
-        bottom: -202px;
+        bottom: -102px;
     }
     .first__sqreen {
         left: -39px;
-        top: -651px;
+        top: -691px;
         row-gap: 32px;
     }
     .first__sqreen-title {
@@ -775,7 +801,7 @@ p {
     }
     .second__sqreen {
         left: -34px;
-        top: -665px;
+        top: -705px;
         row-gap: 12px;
     }
     .second__sqreen__label {
@@ -796,7 +822,7 @@ p {
     }
      #result-screen {
         left: 84px;
-        top: -681px;
+        top: -719px;
         max-width: 189px;
     }
     .result-screen__label{
