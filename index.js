@@ -92,14 +92,24 @@ document.getElementById('textToCopy').addEventListener('click', function() {
             console.error('Ошибка при копировании: ', err);
         });
     });
+const mainContentNumber = document.getElementById('mainContentNumber');
+const tooltip = document.getElementById('tooltip');
 
-// document.getElementById('save-button').addEventListener('click', () => {
-//   const element = document.getElementById('result-screen');
-//   html2canvas(element).then(canvas => {
-//     const dataUrl = canvas.toDataURL('image/png');
-//     const link = document.createElement('a');
-//     link.href = dataUrl;
-//     link.download = 'result.png';
-//     link.click();
-//   });
-// });
+ mainContentNumber.addEventListener('mousemove', function(e) {
+    const rect = mainContentNumber.getBoundingClientRect();
+    const x = e.clientX - rect.left;  // Координата X внутри mainContentNumber
+    const y = e.clientY - rect.top;   // Координата Y внутри mainContentNumber
+
+    tooltip.style.left = (x + 0) + 'px'; // Отступ от курсора внутри mainContentNumber
+    tooltip.style.top = (y + 0) + 'px'; // Отступ от курсора внутри mainContentNumber
+  });
+
+mainContentNumber.addEventListener('mouseenter', function() {
+    tooltip.style.visibility = 'visible';
+    tooltip.style.opacity = '1';
+});
+
+mainContentNumber.addEventListener('mouseleave', function() {
+    tooltip.style.visibility = 'hidden';
+    tooltip.style.opacity = '0';
+});

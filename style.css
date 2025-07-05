@@ -498,14 +498,18 @@ p {
     display: none;
 }
 
-.hoverable-area {
+#mainContentNumber {
     position: relative; 
-    display: inline-block; 
     cursor: none; 
 }
 
+.hoverable-area:hover .tooltip {
+    display: flex;
+}
+
 .tooltip {
-    visibility: hidden; 
+    visibility: hidden;
+    position: absolute;
     border: 2px solid #00cd9d;
     display: flex;
     align-items: center;
@@ -513,11 +517,6 @@ p {
     border-radius: 31px;
     width: 257px;
     height: 47px;
-    position: absolute;
-    bottom: -50%; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    z-index: 1; 
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.29);
     background: #004e31;
     font-family: PressStart;
@@ -526,7 +525,7 @@ p {
     line-height: 175%;
     text-align: center;
     color: #c2fff1;
-    transition: all 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 .pulsing-image {
@@ -553,15 +552,21 @@ p {
     bottom: 77px;
 }
 
-.hoverable-area:hover .tooltip {
-    visibility: visible; /* Показываем облачко при наведении */
-}
+
 
 .mobile-robot{
     display: none;
-}
+}   
+@media (max-width: 1700px){
+    .logo_wrap{
+        padding-top: 22px;
+    }
 
+}
 @media (max-width: 1400px) {
+     .logo_wrap{
+        padding-top: 52px;
+    }
     .main__content__links-right {
         transform: translateX(300px);
     }
@@ -671,6 +676,11 @@ p {
     .main__content__number {
     width: 384px;
     height: 49px;
+    }
+}
+@media(max-width:1024px){
+    .tooltip{
+        display: none;
     }
 }
 @media (max-width: 980px) {
@@ -822,6 +832,9 @@ p {
 }
 
 @media (max-width: 650px) {
+    .main__content__number{
+        box-shadow: none;
+    }
     .mobile__bg{
         display: block;
         width: 100%;
