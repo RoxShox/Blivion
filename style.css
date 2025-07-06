@@ -498,6 +498,35 @@ p {
     display: none;
 }
 
+.popup {
+    font-family: Jersey15;
+    border: 2px solid #00cd9d;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: -100px;
+    bottom: -50px;
+    color: #c2fff1;
+    width: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.72);
+}
+
+.popup-active {
+    width: auto;
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 #mainContentNumber {
     position: relative; 
     cursor: none; 

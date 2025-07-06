@@ -23,7 +23,7 @@ submitUsernameButton.addEventListener('click', () => {
          loadingScreen.classList.remove('hidden');
         let progress = 0;
         const interval = setInterval(() => {
-            progress += 5; // Увеличиваем прогресс на 10%
+            progress += 5;
             progressBar.style.width = progress + '%';
 
             if (progress >= 100) {
@@ -78,7 +78,7 @@ function getRandomInteger() {
 function formatDate() {
     const date = new Date()
     const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Месяцы начинаются с 0
+    const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
     return `${day}.${month}.${year}`;
 }
@@ -87,21 +87,28 @@ function formatDate() {
 document.getElementById('textToCopy').addEventListener('click', function() {
         const text = this.innerText; 
         navigator.clipboard.writeText(text).then(() => {
+            const popup = document.getElementById('popup');
+            popup.classList.add('popup-active')
+            setTimeout(() => {
+                popup.classList.remove('popup-active')
+            }, 2000);
             console.log('Текст скопирован в буфер обмена!');
         }).catch(err => {
             console.error('Ошибка при копировании: ', err);
         });
     });
+
+
 const mainContentNumber = document.getElementById('mainContentNumber');
 const tooltip = document.getElementById('tooltip');
 
  mainContentNumber.addEventListener('mousemove', function(e) {
     const rect = mainContentNumber.getBoundingClientRect();
-    const x = e.clientX - rect.left;  // Координата X внутри mainContentNumber
-    const y = e.clientY - rect.top;   // Координата Y внутри mainContentNumber
+    const x = e.clientX - rect.left;  
+    const y = e.clientY - rect.top;   
 
-    tooltip.style.left = (x + 0) + 'px'; // Отступ от курсора внутри mainContentNumber
-    tooltip.style.top = (y + 0) + 'px'; // Отступ от курсора внутри mainContentNumber
+    tooltip.style.left = (x + 0) + 'px'; 
+    tooltip.style.top = (y + 0) + 'px'; 
   });
 
 mainContentNumber.addEventListener('mouseenter', function() {
