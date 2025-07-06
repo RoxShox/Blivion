@@ -83,14 +83,17 @@ function formatDate() {
     return `${day}.${month}.${year}`;
 }
 
-
+let isCopying = false
 document.getElementById('textToCopy').addEventListener('click', function() {
+        if (isCopying) return
+        isCopying = true
         const text = this.innerText; 
         navigator.clipboard.writeText(text).then(() => {
             const popup = document.getElementById('popup');
             popup.classList.add('popup-active')
             setTimeout(() => {
                 popup.classList.remove('popup-active')
+                isCopying = false
             }, 2000);
             console.log('Текст скопирован в буфер обмена!');
         }).catch(err => {
